@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>AeroExpedia</title>
+
+    <!-- Icons font CSS-->
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link
+        href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/main.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h2 class="title" style="text-align: center;">Flight Preferences</h2>
+                    <form id="flightPreferences" method="post">
+
+                        <!-- Date Row , Range -->
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">From</label>
+                                    <div class="input-group-icon">
+                                        <input class="input--style-4 js-datepicker" type="text" name="fromDate"
+                                            id="fromDate">
+                                        <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">To</label>
+                                    <div class="input-group-icon">
+                                        <input class="input--style-4 js-datepicker" type="text" name="toDate"
+                                            id="toDate">
+                                        <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Flight Options -->
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Flight Type</label>
+                                    <div class="p-t-10">
+                                        <label class="radio-container m-r-45">OneWay
+                                            <input type="radio" checked="checked" name="flightType" value="oneway">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container">RoundTrip
+                                            <input type="radio" name="flightType" value="round">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Stop Overs??</label>
+                                    <div class="p-t-10">
+                                        <label class="radio-container m-r-45">Yes!
+                                            <input type="radio" checked="checked" name="stopOverType" value="1">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container">NO
+                                            <input type="radio" name="stopOverType" value="0">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Currency & Max Price -->
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Currency</label>
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        <select name="currencyType" id="currencyType">
+                                            <option disabled="disabled" selected="selected">Choose option</option>
+                                            <option value="inr">INR</option>
+                                            <option value="usd">USD</option>
+                                            <option value="gbp">GBP</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Affordable Price</label>
+                                    <input class="input--style-4" type="text" name="priceRange" id="priceRange">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cabin Type -->
+                        <div class="input-group">
+                            <label class="label">Flight Cabin/Seat Class</label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="cabinType" id="cabinType">
+                                    <option disabled="disabled" selected="selected">Choose option</option>
+                                    <option value="M">Economy</option>
+                                    <option value="W">Economy Premium</option>
+                                    <option value="C">Business</option>
+                                    <option value="F">First Class</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <div class="p-t-15 ">
+                            <button class="btn btn--radius-2 btn--blue" type="submit" id="final-submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="js/global.js"></script>
+    <script src="js/script.js"></script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->

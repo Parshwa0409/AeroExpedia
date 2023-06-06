@@ -45,7 +45,6 @@ function filterCode(data, country) {
             }
         }
     } catch (error) {
-
         console.log(error);
         // HANDLE IT LATER
     }
